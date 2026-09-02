@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { CTA, PageHero, PageShell, ProjectCard } from "../components";
+import { projects } from "../data";
+export const metadata:Metadata={title:"Case Studies",description:"Documented Shopify, ecommerce and performance marketing case studies by Amir Raza, backed by verified Meta Ads Manager results.",alternates:{canonical:"/case-studies"}};
+export default function CaseStudies(){const cases=projects.filter(p=>p.caseStudy);return <PageShell><PageHero kicker="Strategy behind the numbers" title="Real strategy." accent="Real results." copy="Concise breakdowns of the decisions, store improvements and campaign systems behind documented growth."/><section className="section compact"><div className="shell"><div className="case-intro"><span className="eyebrow">Documented client work</span><p>Each case study connects the storefront, campaign strategy and measurable commercial outcome.</p></div><h2 className="sr-only">Case studies</h2><div className="project-grid case-study-grid">{cases.map((p,i)=><ProjectCard key={p.slug} project={p} index={i}/>)}</div></div></section><CTA/></PageShell>}

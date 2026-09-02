@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { CTA, PageHero, PageShell } from "../components";
+import { verifiedPerformance } from "../data";
+export const metadata:Metadata={title:"Verified Results",description:"Managed spend, purchases and return on ad spend across selected ecommerce accounts, verified from Meta Ads Manager records.",alternates:{canonical:"/results"}};
+const accounts=[
+ {name:"Infinite Mart PK",spend:"PKR 2.51M",purchases:"2,861",roas:"6.08X",peak:"8.00X",slug:"infinitemart"},
+ {name:"RefletePK",spend:"PKR 1.81M",purchases:"2,206",roas:"8.02X",peak:"10.85X",slug:"reflete"},
+ {name:"PikzyStore",spend:"PKR 1.35M",purchases:"1,171",roas:"5.28X",peak:"7.54X",slug:"pikzy"},
+ {name:"AutoCrafte",spend:"PKR 955.74K",purchases:"1,216",roas:"6.17X",peak:"10.72X",slug:"autocrafte"},
+ {name:"Broscenz",spend:"PKR 67.56K",purchases:"80",roas:"5.47X",peak:"5.63X",slug:"broscenz"},
+ {name:"Uniqo",spend:"US$289.22",purchases:"110",roas:"4.75X",peak:"4.96X",slug:"uniqo"},
+];
+export default function Results(){return <PageShell><PageHero kicker="Verified performance snapshot" title="Real numbers." accent="Real revenue." copy="A purchase-only view of Meta ad spend, website purchases and return across six verified ecommerce accounts."/><section className="metric-band large"><div className="shell metric-grid">{[[verifiedPerformance.spend,"verified ad spend"],[verifiedPerformance.purchases,"website purchases"],[verifiedPerformance.averageRoas,"average Purchase ROAS"],[verifiedPerformance.highestRoas,"highest verified ROAS"]].map(([v,l])=><div key={l}><b>{v}</b><span>{l}</span></div>)}</div></section><section className="section compact"><div className="shell"><div className="section-head"><div><span className="eyebrow">Account breakdown</span><h2>Performance,<br/><em>without the fluff.</em></h2></div><p className="head-copy">Figures come from the supplied Meta Ads Manager records for {verifiedPerformance.period}. PKR and USD spend remain separate; messaging and lead conversions are excluded.</p></div><div className="results-table"><div className="result-row result-head"><span>Brand</span><span>Ad spend</span><span>Purchases</span><span>Avg. ROAS</span><span>Peak</span></div>{accounts.map(a=><Link href={`/case-studies/${a.slug}`} className="result-row result-card" key={a.name}><b>{a.name}</b><span data-label="Ad spend">{a.spend}</span><span data-label="Purchases">{a.purchases}</span><strong data-label="Avg. ROAS">{a.roas}</strong><span data-label="Peak ROAS">{a.peak}</span></Link>)}</div><p className="data-note">Purchase metrics only. Messaging and lead campaigns—including HairAgain consultation campaigns—are not counted as website purchases or Purchase ROAS. Results vary by offer, market, budget and execution.</p></div></section><CTA/></PageShell>}

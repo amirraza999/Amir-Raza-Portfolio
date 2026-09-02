@@ -1,0 +1,6 @@
+"use client";
+import { useState } from "react";
+import { CTA, PageHero, PageShell, ProjectCard } from "../components";
+import { projects } from "../data";
+const filters=[["all","All"],["beauty","Beauty & Hair"],["fashion","Fashion"],["electronics","Electronics"],["general","General Stores"],["niche","Niche"],["sports","Sports"],["food","Food & Agri"]];
+export default function Portfolio(){const [active,setActive]=useState("all");const shown=active==="all"?projects:projects.filter(p=>p.category===active);return <PageShell><PageHero kicker="24 original store projects" title="Selected commerce" accent="work." copy="Real storefronts built for Pakistani and international brands—organized by industry, platform and commercial outcome."/><section className="section compact"><div className="shell"><div className="filter-row" aria-label="Filter portfolio">{filters.map(([id,label])=><button type="button" className={active===id?"active":""} aria-pressed={active===id} key={id} onClick={()=>setActive(id)}>{label}</button>)}</div><p className="showing" aria-live="polite">Showing {shown.length} projects</p><h2 className="sr-only">Portfolio projects</h2><div className="project-grid">{shown.map((p,i)=><ProjectCard key={p.slug} project={p} index={i}/>)}</div></div></section><CTA/></PageShell>}
