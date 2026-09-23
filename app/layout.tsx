@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const montserrat = Montserrat({subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], display: "swap", variable: "--font-montserrat"});
+const satoshi = localFont({src: [{path: "./fonts/Satoshi-400.woff2", weight: "400"}, {path: "./fonts/Satoshi-500.woff2", weight: "500"}, {path: "./fonts/Satoshi-700.woff2", weight: "700"}, {path: "./fonts/Satoshi-900.woff2", weight: "900"}], display: "swap", variable: "--font-satoshi"});
 
 const siteUrl = "https://amirraza.me";
 
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.variable} data-theme="light" suppressHydrationWarning>
+    <html lang="en" className={satoshi.variable} data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}` }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
