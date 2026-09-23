@@ -1488,3 +1488,4 @@ html[data-theme="dark"] .project-visual::before{background:radial-gradient(circl
 html[data-theme="dark"] .button-light{background:#fff;color:#17131d}
 html[data-theme="dark"] .case-proof-frame{background:var(--surface);border-color:var(--line)}
 html[data-theme="dark"] .service-icon.shopify{background:linear-gradient(145deg,#16281a,#1a1526);border-color:#2b4a30}
+.hero-photo .mobile-hero-copy .mobile-h1 em{color:#b99aff}
