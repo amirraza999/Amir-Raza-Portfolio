@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata:Metadata={
   title:"Portfolio",
-  description:"Explore 24 Shopify and ecommerce storefront projects across beauty, fashion, electronics and retail.",
+  description:"Explore 28 Shopify and ecommerce storefront projects across beauty, fashion, electronics and retail.",
   alternates:{canonical:"/portfolio"},
 };
 
