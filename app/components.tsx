@@ -2,7 +2,8 @@ import Link from "next/link";
 import ContactForm from "./contact-form";
 import MailtoLink from "./mailto-link";
 import ThemeToggle from "./theme-toggle";
-import { Project, projectMockupImages, projectThumbnailClass, whatsapp } from "./data";
+import DevicePreview from "./device-preview";
+import { Project, projectScrollImages, whatsapp } from "./data";
 
 export function Header(){return <header className="topbar"><div className="shell navigation"><Link href="/" className="wordmark">Amir<span>.</span></Link><nav className="desktop-nav"><Link href="/portfolio">Portfolio</Link><Link href="/case-studies">Case Studies</Link><Link href="/results">Results</Link></nav><div className="header-actions"><ThemeToggle/><a className="button button-dark button-small" href={whatsapp}>Let’s talk <span>→</span></a><details className="mobile-nav"><summary aria-label="Open navigation menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><nav className="mobile-nav-panel" aria-label="Mobile navigation"><Link href="/portfolio"><span>01</span>Portfolio</Link><Link href="/case-studies"><span>02</span>Case Studies</Link><Link href="/results"><span>03</span>Results</Link></nav></details></div></div></header>}
 function SocialIcon({name}:{name:"email"|"linkedin"|"instagram"|"facebook"}){
@@ -14,16 +15,15 @@ function SocialIcon({name}:{name:"email"|"linkedin"|"instagram"|"facebook"}){
 export function Footer(){return <><footer className="footer"><div className="shell footer-grid"><div><Link href="/" className="wordmark light">Amir<span>.</span></Link><p>High-converting Shopify stores and performance campaigns engineered for measurable, profitable growth.</p></div><div><b>Explore</b><Link href="/portfolio">Portfolio</Link><Link href="/case-studies">Case Studies</Link><Link href="/results">Results</Link><Link href="/daraz-management">Daraz Management</Link><Link href="/#reviews">Client Reviews</Link><Link href="/#faqs">FAQs</Link></div><div className="footer-connect"><b>Connect</b><MailtoLink email="amirraza960@outlook.com" className="social-link"><SocialIcon name="email"/>Email</MailtoLink><a className="social-link" href="https://www.linkedin.com/in/iamamirraza" target="_blank" rel="noreferrer"><SocialIcon name="linkedin"/>LinkedIn</a><a className="social-link" href="https://www.instagram.com/amirraza.me/" target="_blank" rel="noreferrer"><SocialIcon name="instagram"/>Instagram</a><a className="social-link" href="https://www.facebook.com/amirraza.me/" target="_blank" rel="noreferrer"><SocialIcon name="facebook"/>Facebook</a></div></div><div className="shell footer-bottom"><span>Karachi, Pakistan · Working worldwide</span><span>© 2026 Amir Raza</span></div></footer><a className="mobile-contact" href={whatsapp}>Discuss your project →</a></>}
 export function PageShell({children}:{children:React.ReactNode}){return <main><Header/>{children}<Footer/></main>}
 export function PageHero({kicker,title,accent,copy}:{kicker:string;title:string;accent:string;copy:string}){return <section className="page-hero"><div className="shell"><span className="eyebrow">{kicker}</span><h1>{title}<br/><em>{accent}</em></h1><p>{copy}</p></div></section>}
-export function ProjectMockup({project,imageLoading="lazy"}:{project:Project;imageLoading?:"eager"|"lazy"}){
-  const mockup=projectMockupImages(project);
-  const thumbnailClass=projectThumbnailClass(project);
-  return <div className="project-stage"><div className="project-panel project-panel-left" aria-hidden="true"><img src={mockup.overview} alt="" loading={imageLoading} decoding="async" width="900" height="1600"/></div><div className="project-panel project-panel-right" aria-hidden="true"><img src={mockup.catalogue} alt="" loading={imageLoading} decoding="async" width="900" height="1600"/></div><div className="project-panel project-panel-main"><img className={thumbnailClass} src={mockup.main} alt={`${project.name} website design`} loading={imageLoading} decoding="async" width="1400" height="904"/></div><div className="project-panel project-panel-detail" aria-hidden="true"><img src={mockup.detail} alt="" loading={imageLoading} decoding="async" width="900" height="1600"/></div></div>;
+export function ProjectPreview({project,loading="lazy",size="card"}:{project:Project;loading?:"eager"|"lazy";size?:"card"|"large"}){
+  const images=projectScrollImages(project);
+  return <DevicePreview name={project.name} desktop={images.desktop} mobile={images.mobile} loading={loading} size={size}/>;
 }
 export function ProjectCard({project,index=0}:{project:Project;index?:number}){
   const isExternal=!project.caseStudy;
   const href=project.caseStudy?`/case-studies/${project.slug}`:`https://${project.domain}`;
-  const imageLoading=project.featured||index<4?"eager":"lazy";
-  return <article className="project-card"><Link href={href} className="project-visual" target={isExternal?"_blank":undefined} rel={isExternal?"noreferrer":undefined} aria-label={`View ${project.name} project${isExternal?" in a new tab":""}`}><ProjectMockup project={project} imageLoading={imageLoading}/><span className="project-view-pill">View project ↗</span></Link><div className="project-meta"><div><p>{project.industry}</p><h3>{project.name}</h3><div className="tag-row">{project.tags.map(t=><span key={t}>{t}</span>)}</div></div><strong>{project.result}</strong></div></article>
+  const loading=project.featured||index<4?"eager":"lazy";
+  return <article className="project-card dp-card"><ProjectPreview project={project} loading={loading}/><div className="dp-meta"><div className="dp-meta-copy"><p className="dp-category">{project.industry}</p><h3 className="dp-name">{project.name}</h3><div className="tag-row">{project.tags.map(t=><span key={t}>{t}</span>)}</div><strong className="dp-result">{project.result}</strong></div><Link className="dp-link" href={href} target={isExternal?"_blank":undefined} rel={isExternal?"noopener noreferrer":undefined} aria-label={`View ${project.name} project${isExternal?" in a new tab":""}`}><span aria-hidden="true">↗</span></Link></div></article>
 }
 export function HeroGraphic(){
   return <div className="hero-graphic" aria-hidden="true">

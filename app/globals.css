@@ -1116,26 +1116,36 @@ body{font-family:var(--font-satoshi),"Open Sans","Segoe UI",Arial,sans-serif;fon
 /* Final responsive and interaction safeguards. */
 html,body{max-width:100%;overflow-x:clip}
 .page-hero h1,.case-hero h1,.project-meta h3,.review-client h3{overflow-wrap:anywhere}
-.carousel-dots,.review-dots{min-height:32px}
+.carousel-dots,.review-dots{min-height:24px;gap:0}
 .carousel-dots button,.review-dots button{
-  width:32px;
-  height:32px;
+  width:24px;
+  height:24px;
   display:grid;
   place-items:center;
   padding:0;
   border:0;
+  border-radius:8px;
   background:transparent;
 }
 .carousel-dots button::before,.review-dots button::before{
   content:"";
-  width:10px;
-  height:10px;
+  width:8px;
+  height:8px;
   border-radius:999px;
   background:#8f899a;
-  transition:width .2s ease,background .2s ease;
+  transition:width .25s ease,background .2s ease;
 }
-.carousel-dots button.active,.review-dots button.active{width:32px;background:transparent}
-.carousel-dots button.active::before,.review-dots button.active::before{width:24px;background:var(--purple-fill)}
+.carousel-dots button:hover::before,.review-dots button:hover::before{background:#6f6980}
+.carousel-dots button:focus-visible,.review-dots button:focus-visible{outline:2px solid var(--purple2);outline-offset:-2px}
+.carousel-dots button.active,.review-dots button.active{width:38px;background:transparent}
+.carousel-dots button.active::before,.review-dots button.active::before{width:22px;background:var(--purple-fill)}
+@media(hover:hover) and (pointer:fine){
+  .carousel-dots button,.review-dots button{width:18px}
+  .carousel-dots button.active,.review-dots button.active{width:32px}
+}
+html[data-theme="dark"] .carousel-dots button::before,html[data-theme="dark"] .review-dots button::before{background:#5d566b}
+html[data-theme="dark"] .carousel-dots button:hover::before,html[data-theme="dark"] .review-dots button:hover::before{background:#8a8299}
+html[data-theme="dark"] .carousel-dots button.active::before,html[data-theme="dark"] .review-dots button.active::before{background:var(--purple)}
 
 @media(max-width:800px){
   body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
@@ -1489,3 +1499,56 @@ html[data-theme="dark"] .button-light{background:#fff;color:#17131d}
 html[data-theme="dark"] .case-proof-frame{background:var(--surface);border-color:var(--line)}
 html[data-theme="dark"] .service-icon.shopify{background:linear-gradient(145deg,#16281a,#1a1526);border-color:#2b4a30}
 .hero-photo .mobile-hero-copy .mobile-h1 em{color:#b99aff}
+
+/* Device preview cards: desktop + phone frames that scroll independently */
+.dp-card{display:flex;flex-direction:column;min-width:0}
+.dp-stage{position:relative;aspect-ratio:1.43;overflow:hidden;isolation:isolate;background:#f0ebf8;border:1px solid #e6dff1;border-radius:16px}
+.dp-stage::before{content:"";position:absolute;width:80%;aspect-ratio:1;top:-46%;right:-30%;border:1px solid #ffffffa0;border-radius:50%;pointer-events:none}
+.dp-device{position:absolute;display:block;padding:0;background:#fff;color:inherit;font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:border-color .2s}
+.dp-device:hover{border-color:#6d28d9}
+.dp-device:focus-visible{outline:3px solid #8b5cf6;outline-offset:4px}
+.dp-desktop{left:6.5%;top:11%;width:76%;height:69%;border:5px solid #25222c;border-radius:10px;box-shadow:0 14px 24px #25163220}
+.dp-browser-bar{height:23px;display:flex;align-items:center;gap:10px;padding:0 9px;background:#f7f6f9;border-bottom:1px solid #ebe8ed}
+.dp-browser-dots{display:flex;gap:4px}
+.dp-browser-dots i{width:5px;height:5px;border-radius:50%;background:#f4a8a0}
+.dp-browser-dots i:nth-child(2){background:#f1cf8c}
+.dp-browser-dots i:nth-child(3){background:#aed4b9}
+.dp-browser-title{flex:1;font-size:8px;text-align:center;color:#857b91;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dp-viewport{display:block;position:relative;height:100%;overflow:hidden;background:#fff}
+.dp-desktop .dp-viewport{height:calc(100% - 23px)}
+.dp-viewport img{display:block;width:100%;height:auto;max-width:none;border-radius:0;box-shadow:none;transform:none}
+.dp-phone{right:5%;bottom:11%;width:23%;height:60%;z-index:2;border:5px solid #25222c;border-radius:21px;box-shadow:0 15px 25px #25163230}
+.dp-phone .dp-viewport{border-radius:15px}
+.dp-notch{position:absolute;z-index:3;top:0;left:32%;width:36%;height:9px;background:#25222c;border-radius:0 0 8px 8px;pointer-events:none}
+.dp-home-indicator{position:absolute;z-index:3;bottom:4px;left:33%;width:34%;height:3px;background:#25222c;border-radius:6px;pointer-events:none}
+.dp-meta{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-top:18px}
+.dp-meta-copy{min-width:0}
+.dp-category{margin:0 0 6px;color:var(--muted);font-size:var(--fs-2xs);font-weight:600}
+.dp-name{margin:0 0 10px;font-size:21px;letter-spacing:-.5px;line-height:1.25}
+.dp-result{display:block;margin-top:10px;color:var(--purple);font-size:13px;font-weight:700}
+.dp-link{flex-shrink:0;display:grid;place-items:center;width:40px;height:40px;border:1px solid #e6ddec;border-radius:50%;color:#6d28d9;text-decoration:none;font-size:22px;transition:background .2s,color .2s}
+.dp-link:hover,.dp-link:focus-visible{background:#6d28d9;color:#fff}
+.dp-size-large{aspect-ratio:1.6;max-width:1000px;margin:0 auto}
+.dp-size-large .dp-browser-bar{height:30px}
+.dp-size-large .dp-desktop .dp-viewport{height:calc(100% - 30px)}
+.dp-size-large .dp-browser-title{font-size:11px}
+.dp-size-large .dp-browser-dots i{width:8px;height:8px}
+.case-showcase{height:auto}
+@media(max-width:760px){
+  .dp-stage{aspect-ratio:1.25}
+  .dp-desktop{left:5.5%;top:13%;width:78%;height:64%;border-width:4px}
+  .dp-phone{right:4.5%;width:25%;border-width:4px;border-radius:17px}
+  .dp-name{font-size:19px}
+  .dp-size-large{aspect-ratio:1.25}
+}
+@media(prefers-reduced-motion:reduce){
+  .dp-viewport{overflow-y:auto}
+  .dp-device{transition:none}
+}
+html[data-theme="dark"] .dp-stage{background:#1d1729;border-color:var(--line)}
+html[data-theme="dark"] .dp-stage::before{border-color:#ffffff14}
+html[data-theme="dark"] .dp-device{border-color:#0b0910}
+html[data-theme="dark"] .dp-device:hover{border-color:#8b5cf6}
+html[data-theme="dark"] .dp-notch,html[data-theme="dark"] .dp-home-indicator{background:#0b0910}
+html[data-theme="dark"] .dp-link{border-color:var(--line);color:var(--purple)}
+html[data-theme="dark"] .dp-link:hover,html[data-theme="dark"] .dp-link:focus-visible{background:var(--purple-fill);color:#fff}

@@ -26,26 +26,8 @@ export function projectThumbnail(project:Project){
   return liveBrowserShots[project.slug] || `/images/thumbs-hq/${project.image}`;
 }
 
-export type ProjectMockupImages = {
-  main:string;
-  overview:string;
-  catalogue:string;
-  detail:string;
-};
-
-/**
- * The mockup deliberately mixes a clean live/home viewport with different
- * regions of the project's full-page capture. This prevents the four screens
- * from repeating the same hero and lets each card show the wider site journey.
- */
-export function projectMockupImages(project:Project):ProjectMockupImages{
-  const main=projectThumbnail(project);
-  const fullPage=`/images/portfolio/${project.image}`;
-  return {main,overview:fullPage,catalogue:fullPage,detail:fullPage};
-}
-
-export function projectThumbnailClass(project:Project){
-  return "reference-ready-shot";
+export function projectScrollImages(project:Project){
+  return {desktop:`/images/scroll/${project.slug}-desktop.webp`, mobile:`/images/scroll/${project.slug}-mobile.webp`};
 }
 
 export const projects: Project[] = [
