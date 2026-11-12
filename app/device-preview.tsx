@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 type Kind = "desktop" | "phone";
 
-function ScrollDevice({kind, src, title, alt, loading}:{kind:Kind; src:string; title:string; alt:string; loading:"eager"|"lazy"}){
+function ScrollDevice({kind, src, title, alt, loading, onOpen}:{kind:Kind; src:string; title:string; alt:string; loading:"eager"|"lazy"; onOpen?:()=>void}){
+  const openRef=useRef(onOpen);
+  openRef.current=onOpen;
   const deviceRef=useRef<HTMLButtonElement>(null);
   const viewportRef=useRef<HTMLSpanElement>(null);
   const imageRef=useRef<HTMLImageElement>(null);
@@ -55,7 +58,7 @@ function ScrollDevice({kind, src, title, alt, loading}:{kind:Kind; src:string; t
     const onEnter=()=>{if(hoverQuery.matches) play();};
     const onLeave=()=>{if(hoverQuery.matches) reset();};
     const onClick=(event:MouseEvent)=>{
-      if(hoverQuery.matches&&event.detail>0) return;
+      if(hoverQuery.matches&&event.detail>0){openRef.current?.();return;}
       if(playing) pause(); else play();
     };
     const onBlur=()=>{if(hoverQuery.matches) reset();};
@@ -90,9 +93,11 @@ function ScrollDevice({kind, src, title, alt, loading}:{kind:Kind; src:string; t
   </button>;
 }
 
-export default function DevicePreview({name, desktop, mobile, loading="lazy", size="card"}:{name:string; desktop:string; mobile:string; loading?:"eager"|"lazy"; size?:"card"|"large"}){
+export default function DevicePreview({name, desktop, mobile, loading="lazy", size="card", href, external=false}:{name:string; desktop:string; mobile:string; loading?:"eager"|"lazy"; size?:"card"|"large"; href?:string; external?:boolean}){
+  const router=useRouter();
+  const open=href?()=>{if(external) window.open(href,"_blank","noopener,noreferrer"); else router.push(href);}:undefined;
   return <div className={`dp-stage dp-size-${size}`}>
-    <ScrollDevice kind="desktop" src={desktop} title={name} alt={`${name} desktop website screenshot`} loading={loading}/>
-    <ScrollDevice kind="phone" src={mobile} title={name} alt={`${name} mobile website screenshot`} loading={loading}/>
+    <ScrollDevice kind="desktop" src={desktop} title={name} alt={`${name} desktop website screenshot`} loading={loading} onOpen={open}/>
+    <ScrollDevice kind="phone" src={mobile} title={name} alt={`${name} mobile website screenshot`} loading={loading} onOpen={open}/>
   </div>;
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CTA, PageShell, ProjectPreview, RoasMeter } from "../../components";
 import { caseDetails, projectThumbnail, projects } from "../../data";
+export const dynamicParams=false;
+export function generateStaticParams(){return projects.filter(p=>p.caseStudy&&caseDetails[p.slug]).map(p=>({slug:p.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=projects.find(p=>p.slug===slug&&p.caseStudy);const detail=caseDetails[slug];if(!project||!detail)return{title:"Case Study"};const title=`${project.name} Case Study`;const image=projectThumbnail(project);return{title,description:detail.intro,alternates:{canonical:`/case-studies/${slug}`},openGraph:{title:`${title} | Amir Raza`,description:detail.intro,url:`/case-studies/${slug}`,images:[{url:image,alt:`${project.name} website design`}]},twitter:{card:"summary_large_image",title:`${title} | Amir Raza`,description:detail.intro,images:[image]}};}
 export default async function CaseStudy({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params;
