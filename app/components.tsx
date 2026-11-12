@@ -22,8 +22,9 @@ export function ProjectPreview({project,loading="lazy",size="card"}:{project:Pro
 export function ProjectCard({project,index=0}:{project:Project;index?:number}){
   const isExternal=!project.caseStudy;
   const href=project.caseStudy?`/case-studies/${project.slug}`:`https://${project.domain}`;
+  const hasLink=Boolean(project.caseStudy)||!project.offline;
   const loading=project.featured||index<4?"eager":"lazy";
-  return <article className="project-card dp-card"><ProjectPreview project={project} loading={loading}/><div className="dp-meta"><div className="dp-meta-copy"><p className="dp-category">{project.industry}</p><h3 className="dp-name">{project.name}</h3><div className="tag-row">{project.tags.map(t=><span key={t}>{t}</span>)}</div><strong className="dp-result">{project.result}</strong></div><Link className="dp-link" href={href} target={isExternal?"_blank":undefined} rel={isExternal?"noopener noreferrer":undefined} aria-label={`View ${project.name} project${isExternal?" in a new tab":""}`}><span aria-hidden="true">↗</span></Link></div></article>
+  return <article className="project-card dp-card"><ProjectPreview project={project} loading={loading}/><div className="dp-meta"><div className="dp-meta-copy"><p className="dp-category">{project.industry}</p><h3 className="dp-name">{project.name}</h3><div className="tag-row">{project.tags.map(t=><span key={t}>{t}</span>)}</div><strong className="dp-result">{project.result}</strong></div>{hasLink&&<Link className="dp-link" href={href} target={isExternal?"_blank":undefined} rel={isExternal?"noopener noreferrer":undefined} aria-label={`View ${project.name} project${isExternal?" in a new tab":""}`}><span aria-hidden="true">↗</span></Link>}</div></article>
 }
 export function HeroGraphic(){
   return <div className="hero-graphic" aria-hidden="true">

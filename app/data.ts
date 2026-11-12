@@ -12,7 +12,7 @@ export const verifiedPerformance = {
 
 export type Project = {
   slug: string; name: string; domain: string; industry: string; image: string;
-  tags: string[]; result: string; category: string; featured?: boolean; caseStudy?: boolean;
+  tags: string[]; result: string; category: string; featured?: boolean; caseStudy?: boolean; offline?: boolean;
 };
 
 const liveBrowserShots: Record<string,string> = {
@@ -48,15 +48,15 @@ export const projects: Project[] = [
   {slug:"dkcollection",name:"DK Collection",domain:"dkcollectionpk.com",industry:"Kids · Home accessories",image:"dkcollection.webp",tags:["Shopify","Kids","Pakistan"],result:"Kids & lifestyle storefront",category:"general"},
   {slug:"raraavis",name:"Rara Avis",domain:"raraavis.pk",industry:"Kids & family fashion",image:"raraavis.webp",tags:["Shopify","Fashion","Eastern Wear"],result:"Boys, girls, women & men lines",category:"fashion"},
   {slug:"barakahnaturals",name:"Barakah Naturals",domain:"barakahnaturals.com",industry:"Organic skincare · Health",image:"barakahnaturals.webp",tags:["Shopify","Organic","PCSIR"],result:"60% sales growth",category:"beauty"},
-  {slug:"selfcaress",name:"Selfcaress",domain:"selfcaress.store",industry:"Skincare · Beauty",image:"selfcaress.webp",tags:["Shopify","Skincare","Natural"],result:"45% CVR growth",category:"beauty"},
-  {slug:"pehrahan",name:"Pehrahan",domain:"pehrahan.pk",industry:"Women’s fashion",image:"pehrahan.webp",tags:["Shopify","Fashion","Luxury"],result:"45% order growth",category:"fashion"},
-  {slug:"nmjewels",name:"NM Jewels",domain:"nmjewels.pk",industry:"Jewelry",image:"nmjewels.webp",tags:["Shopify","Jewelry","Premium"],result:"50% revenue growth",category:"fashion"},
-  {slug:"gentlook",name:"Gentlook",domain:"gentlook.com",industry:"Men’s accessories",image:"gentlook.webp",tags:["Shopify","Niche","CRO"],result:"40% CVR growth",category:"fashion"},
+  {slug:"selfcaress",name:"Selfcaress",domain:"selfcaress.store",industry:"Skincare · Beauty",image:"selfcaress.webp",tags:["Shopify","Skincare","Natural"],result:"45% CVR growth",category:"beauty",offline:true},
+  {slug:"pehrahan",name:"Pehrahan",domain:"pehrahan.pk",industry:"Women’s fashion",image:"pehrahan.webp",tags:["Shopify","Fashion","Luxury"],result:"45% order growth",category:"fashion",offline:true},
+  {slug:"nmjewels",name:"NM Jewels",domain:"nmjewels.pk",industry:"Jewelry",image:"nmjewels.webp",tags:["Shopify","Jewelry","Premium"],result:"50% revenue growth",category:"fashion",offline:true},
+  {slug:"gentlook",name:"Gentlook",domain:"gentlook.com",industry:"Men’s accessories",image:"gentlook.webp",tags:["Shopify","Niche","CRO"],result:"40% CVR growth",category:"fashion",offline:true},
   {slug:"mee10",name:"Mee10",domain:"mee10.com",industry:"Men’s accessories",image:"mee10.webp",tags:["Shopify","Video Ads","COD"],result:"10K+ customers",category:"fashion"},
-  {slug:"gen1x",name:"Gen1x",domain:"gen1x.com",industry:"Smartwatches · Tech",image:"gen1x.webp",tags:["Shopify","Dark UI","Tech"],result:"48% sales growth",category:"electronics"},
-  {slug:"maxesso",name:"Maxesso",domain:"maxesso.com",industry:"Luxury perfumes",image:"maxesso.webp",tags:["Shopify","Luxury","Black/Gold"],result:"65% AOV growth",category:"beauty"},
-  {slug:"bbcbazaar",name:"BBC Bazaar",domain:"bbcbazaar.com",industry:"General store",image:"bbcbazaar.webp",tags:["Shopify","Multi-category","COD"],result:"42% sales growth",category:"general"},
-  {slug:"zakhira47",name:"Zakhira47",domain:"zakhira47.com",industry:"General store",image:"zakhira47.webp",tags:["Shopify","Pakistan","COD"],result:"35% revenue growth",category:"general"},
+  {slug:"gen1x",name:"Gen1x",domain:"gen1x.com",industry:"Smartwatches · Tech",image:"gen1x.webp",tags:["Shopify","Dark UI","Tech"],result:"48% sales growth",category:"electronics",offline:true},
+  {slug:"maxesso",name:"Maxesso",domain:"maxesso.com",industry:"Luxury perfumes",image:"maxesso.webp",tags:["Shopify","Luxury","Black/Gold"],result:"65% AOV growth",category:"beauty",offline:true},
+  {slug:"bbcbazaar",name:"BBC Bazaar",domain:"bbcbazaar.com",industry:"General store",image:"bbcbazaar.webp",tags:["Shopify","Multi-category","COD"],result:"42% sales growth",category:"general",offline:true},
+  {slug:"zakhira47",name:"Zakhira47",domain:"zakhira47.com",industry:"General store",image:"zakhira47.webp",tags:["Shopify","Pakistan","COD"],result:"35% revenue growth",category:"general",offline:true},
   {slug:"mysbarshop",name:"MyBar Shop",domain:"mysbarshop.com",industry:"Sports merchandise",image:"mysbarshop.webp",tags:["Shopify","Cricket","Football"],result:"52% sales growth",category:"sports"},
   {slug:"rabbitsplanet",name:"Rabbits Planet",domain:"rabbitsplanet.com",industry:"Animal farming · Food",image:"rabbitsplanet.webp",tags:["WooCommerce","Elementor","Export"],result:"Global niche launch",category:"food"},
 ];
