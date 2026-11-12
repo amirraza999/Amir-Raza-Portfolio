@@ -86,7 +86,7 @@ function ScrollDevice({kind, src, title, alt, loading, onOpen}:{kind:Kind; src:s
 
   return <button ref={deviceRef} type="button" className={`dp-device dp-${kind}`} aria-label={`Scroll ${title} ${kind==="phone"?"mobile":"desktop"} preview`} aria-pressed="false">
     {kind==="desktop"
-      ?<span className="dp-browser-bar"><span className="dp-browser-dots" aria-hidden="true"><i/><i/><i/></span><span className="dp-browser-title">{title}</span></span>
+      ?<span className="dp-browser-bar"><span className="dp-browser-dots" aria-hidden="true"><i/><i/><i/></span><span className="dp-browser-title" aria-hidden="true">{title}</span></span>
       :<span className="dp-notch" aria-hidden="true"/>}
     <span ref={viewportRef} className="dp-viewport"><img ref={imageRef} src={src} alt={alt} loading={loading} decoding="async"/></span>
     {kind==="phone"&&<span className="dp-home-indicator" aria-hidden="true"/>}

@@ -2,7 +2,7 @@
 
 > Amir Raza is a Shopify development and performance marketing specialist based in Karachi, Pakistan, working with ecommerce brands in Pakistan and internationally. Services: Shopify store development, Meta & Google Ads management, Daraz store management, brand/creative design, and conversion rate optimization (CRO).
 
-Verified performance (from Meta Ads Manager records, 1 May–28 Aug 2026): PKR 6.69M+ and US$289+ in managed ad spend, 7,644+ website purchases, 5.96X average Purchase ROAS, 10.85X highest verified Purchase ROAS, across 30 ecommerce stores in 10+ industries.
+Verified performance (from Meta Ads Manager account data, 14 Aug–11 Nov 2026): PKR 7.12M in managed ad spend, 8,410 website purchases, 4.90X average Purchase ROAS and 8.53X highest verified Purchase ROAS (best campaign using at least 5% of its account's spend), across five verified ecommerce accounts. Experience spans 30 ecommerce stores in 10+ industries.
 
 ## Key pages
 
@@ -14,10 +14,10 @@ Verified performance (from Meta Ads Manager records, 1 May–28 Aug 2026): PKR 6
 
 ## Notable case studies
 
-- [Infinite Mart PK](https://amirraza.me/case-studies/infinitemart) — multi-category COD store, 6.08X average Purchase ROAS.
-- [RefletePK](https://amirraza.me/case-studies/reflete) — 1,100+ product catalogue rebuild, 8.02X average Purchase ROAS.
+- [Infinite Mart PK](https://amirraza.me/case-studies/infinitemart) — multi-category COD store, 5.25X average Purchase ROAS.
+- [RefletePK](https://amirraza.me/case-studies/reflete) — 1,100+ product catalogue rebuild, 6.40X average Purchase ROAS.
 - [HairAgain International](https://amirraza.me/case-studies/hairagain) — consultation-first funnel for a hair-replacement brand, 1,962 qualified conversations.
-- [PikzyStore](https://amirraza.me/case-studies/pikzy) — general ecommerce, 5.28X average Purchase ROAS.
+- [PikzyStore](https://amirraza.me/case-studies/pikzy) — general ecommerce, 4.60X average Purchase ROAS.
 - [Sheikh Marketplace UAE](https://amirraza.me/case-studies/sheikh) — multi-category storefront for the UAE market.
 
 ## Contact

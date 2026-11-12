@@ -9,7 +9,7 @@ const siteUrl = "https://amirraza.me";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Amir Raza | Shopify & Performance Marketing", template: "%s | Amir Raza" },
-  description: "Shopify stores, performance marketing and Daraz management for brands in Pakistan and worldwide. Verified Meta Ads results: 7,644+ purchases, 5.96X average Purchase ROAS.",
+  description: "Shopify stores, performance marketing and Daraz management for brands in Pakistan and worldwide. Verified Meta Ads results: 8,410 purchases, 4.90X average Purchase ROAS.",
   keywords: ["Shopify expert Pakistan", "Meta Ads manager", "performance marketing Karachi", "Shopify store development", "Daraz store management", "ecommerce growth Pakistan", "Facebook Ads agency Pakistan"],
   authors: [{ name: "Amir Raza", url: siteUrl }],
   creator: "Amir Raza",
