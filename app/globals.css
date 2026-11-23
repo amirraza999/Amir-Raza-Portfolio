@@ -1674,3 +1674,17 @@ html[data-theme="dark"] .cv-num,html[data-theme="dark"] .cv-block p strong,html[
 @media(max-width:700px){.cv-highlights b{font-size:32px}.cv-lede{font-size:15.5px!important}}
 @media print{.cv-title{font-size:12pt}.cv-num,.cv-block p strong{color:#5b21b6}}
 .cv-edu strong,html[data-theme="dark"] .cv-edu strong{color:var(--ink)!important}
+
+/* Project grid: 3 columns on desktop, 2 on tablet, 1 on phone */
+@media(min-width:761px) and (max-width:1099px){
+  .project-grid:not(.home-featured-grid){grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 22px}
+}
+@media(min-width:1100px){
+  .project-grid:not(.home-featured-grid){grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 24px}
+  .project-grid:not(.home-featured-grid) .dp-desktop{border-width:4px;border-radius:9px}
+  .project-grid:not(.home-featured-grid) .dp-phone{border-width:4px;border-radius:17px}
+  .project-grid:not(.home-featured-grid) .dp-browser-bar{height:19px;padding:0 7px;gap:7px}
+  .project-grid:not(.home-featured-grid) .dp-desktop .dp-viewport{height:calc(100% - 19px)}
+  .project-grid:not(.home-featured-grid) .dp-name{font-size:19px}
+  .project-grid:not(.home-featured-grid) .dp-link{width:36px;height:36px;font-size:19px}
+}
