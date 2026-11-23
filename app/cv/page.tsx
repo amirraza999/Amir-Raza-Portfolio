@@ -6,15 +6,30 @@ import MailtoLink from "../mailto-link";
 import PrintButton from "./print-button";
 
 const email = "amirraza960@outlook.com";
-const linkedin = "https://www.linkedin.com/in/iamamirraza";
+const linkedin = "https://www.linkedin.com/in/amirraza.me";
 const title = "Shopify CRO & Performance Marketing Specialist";
 
 export const metadata: Metadata = {
-  title: "CV / Resume",
+  title: { absolute: "Amir Raza CV – Shopify CRO & Performance Marketing Specialist, Karachi" },
   description: `Amir Raza CV: ${title}. 3+ years in Shopify CRO, Meta Ads and ecommerce growth. ${verifiedPerformance.purchases} verified purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS. Download the PDF resume.`,
+  keywords: ["Amir Raza CV", "Amir Raza resume", "Shopify CRO specialist", "performance marketer Pakistan", "Meta Ads specialist Karachi", "Shopify expert Pakistan", "ecommerce growth specialist", "conversion rate optimization Shopify", "Daraz store manager"],
   alternates: { canonical: "/cv" },
-  openGraph: { title: "Amir Raza | CV / Resume", description: `${title}. Shopify CRO, Meta Ads, GA4, A/B testing and Daraz.`, url: "/cv", images: [{ url: "/images/amir-raza.webp", width: 940, height: 940, alt: "Amir Raza" }] },
+  twitter: { card: "summary_large_image", title: "Amir Raza CV – Shopify CRO & Performance Marketing", description: `${verifiedPerformance.purchases} verified purchases · ${verifiedPerformance.averageRoas} average Purchase ROAS · 30 ecommerce stores.`, images: ["/images/amir-raza.webp"] },
+  openGraph: { type: "profile", title: "Amir Raza | CV / Resume", description: `${title}. Shopify CRO, Meta Ads, GA4, A/B testing and Daraz.`, url: "/cv", images: [{ url: "/images/amir-raza.webp", width: 940, height: 940, alt: "Amir Raza" }] },
 };
+
+const numRe = /(PKR [\d.]+M|US\$[\d,]+|\d[\d,]*(?:\.\d+)?(?:%|X)|\d{1,3}(?:,\d{3})+|\b30(?= ecommerce)|10\+)/g;
+function Hl({ text }: { text: string }) {
+  return <>{text.split(numRe).map((part, i) => (i % 2 ? <strong className="cv-num" key={i}>{part}</strong> : part))}</>;
+}
+
+const faqs = [
+  { q: "Who is Amir Raza?", a: `Amir Raza is a ${title} based in Karachi, Pakistan, working with ecommerce brands worldwide. Since April 2023 he has worked as an eCommerce CRO & Conversion Strategist, building and optimising Shopify stores and running Meta, Google and TikTok ads.` },
+  { q: "What results has Amir Raza delivered?", a: `In the last 90 days (${verifiedPerformance.period}) his Meta Ads campaigns produced ${verifiedPerformance.purchases} purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS across seven ad accounts for six brands, with a peak of ${verifiedPerformance.highestRoas}, verified in Meta Ads Manager. He has worked on 30 ecommerce stores across 10+ industries, lifting conversion rates by 15% and AOV by 25%.` },
+  { q: "What services does Amir Raza offer?", a: "Shopify store development and CRO audits, A/B testing, Meta, Google and TikTok ads management, GA4 and pixel tracking, upsell and bundle setup, and Daraz store management." },
+  { q: "Which tools does Amir Raza use?", a: "GA4, Shopify Analytics, Meta Pixel, Hotjar, Microsoft Clarity, Meta Ads Manager, Google Ads, TikTok Ads, Shopify, WooCommerce, Daraz, WordPress, Canva, Photoshop and Illustrator." },
+  { q: "How can I hire Amir Raza?", a: "Message him on WhatsApp at +92 311 6450243, email amirraza960@outlook.com, or connect on LinkedIn at linkedin.com/in/amirraza.me. He is open to freelance projects and remote roles." },
+];
 
 const highlights = [
   { value: verifiedPerformance.purchases, label: "verified Meta Ads purchases", note: verifiedPerformance.period },
@@ -93,12 +108,28 @@ const certifications = [
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "@id": "https://amirraza.me/cv#page",
   url: "https://amirraza.me/cv",
+  name: "Amir Raza CV / Resume",
+  dateModified: "2026-11-23",
+  breadcrumb: { "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://amirraza.me/" },
+    { "@type": "ListItem", position: 2, name: "CV", item: "https://amirraza.me/cv" },
+  ] },
   mainEntity: {
     "@type": "Person",
     "@id": "https://amirraza.me/#person",
     name: "Amir Raza",
     jobTitle: title,
+    description: `${title} with 3+ years in ecommerce. ${verifiedPerformance.purchases} verified Meta Ads purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS; 30 ecommerce stores across 10+ industries.`,
+    telephone: "+923116450243",
+    worksFor: { "@type": "Organization", name: "Amzoner Consulting" },
+    hasOccupation: { "@type": "Occupation", name: title, occupationLocation: { "@type": "Country", name: "Pakistan" }, skills: "Conversion rate optimization, Shopify development, Meta Ads, Google Ads, TikTok Ads, GA4, A/B testing, Daraz" },
+    hasCredential: [
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "degree", name: "MSc Petroleum Technology", recognizedBy: { "@type": "CollegeOrUniversity", name: "University of Karachi" } },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "degree", name: "BSc (Hons) Petroleum Technology", recognizedBy: { "@type": "CollegeOrUniversity", name: "University of Karachi" } },
+    ],
+    subjectOf: { "@type": "DigitalDocument", name: "Amir Raza CV (PDF)", url: "https://amirraza.me/Amir-Raza-CV.pdf", encodingFormat: "application/pdf" },
     url: "https://amirraza.me",
     image: "https://amirraza.me/images/amir-raza.webp",
     email: `mailto:${email}`,
@@ -110,14 +141,17 @@ const personSchema = {
   },
 };
 
+const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+
 export default function CV() {
   const cases = projects.filter((p) => p.caseStudy && !p.offline);
   return <PageShell>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <section className="page-hero cv-hero"><div className="shell">
       <span className="eyebrow">Curriculum vitae</span>
       <h1>Amir Raza<br /><em>{title}.</em></h1>
-      <p>I find why visitors leave without buying, fix it, and then scale what works with paid ads. Open to freelance projects and remote roles.</p>
+      <p className="cv-lede"><strong>Amir Raza</strong> is a Karachi-based Shopify CRO and Meta Ads specialist with <strong>3+ years</strong> in ecommerce: <strong>{verifiedPerformance.purchases} verified purchases</strong> at <strong>{verifiedPerformance.averageRoas} average ROAS</strong> and <strong>30 stores</strong> built. Open to freelance projects and remote roles.</p>
       <div className="cv-actions">
         <a className="button button-primary" href="/Amir-Raza-CV.pdf" download>Download CV (PDF) <span aria-hidden="true">↓</span></a>
         <a className="button button-light button-outline" href={whatsapp}>Hire me on WhatsApp <span aria-hidden="true">→</span></a>
@@ -135,12 +169,12 @@ export default function CV() {
             <li><a href={whatsapp}>+92 311 6450243</a> (WhatsApp)</li>
             <li><MailtoLink email={email}>{email}</MailtoLink></li>
             <li><a href="https://amirraza.me">amirraza.me</a></li>
-            <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/iamamirraza</a></li>
+            <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/amirraza.me</a></li>
           </ul>
         </header>
 
         <section className="cv-block"><h3>Professional summary</h3>
-          <p>For more than three years I have worked inside Shopify stores, not just building them but finding out why visitors leave without buying and fixing it. I read GA4, heatmaps and session recordings, form a hypothesis, test it and scale what wins. On the acquisition side I manage Meta Ads for ecommerce brands: <strong>{verifiedPerformance.purchases} purchases at {verifiedPerformance.averageRoas} average Purchase ROAS</strong> in the last 90 days, verified in Ads Manager. I have worked on <strong>30 ecommerce stores across 10+ industries</strong>, grown conversion rates and AOV, and helped brands earn more from the traffic they already have.</p>
+          <p>For <strong>3+ years</strong> I have worked inside Shopify stores, not just building them but finding out why visitors leave without buying and fixing it. I read GA4, heatmaps and session recordings, form a hypothesis, test it and scale what wins. On the acquisition side I manage Meta Ads for ecommerce brands: <strong>{verifiedPerformance.purchases} purchases at {verifiedPerformance.averageRoas} average Purchase ROAS</strong> in the last 90 days, verified in Ads Manager. I have worked on <strong>30 ecommerce stores across 10+ industries</strong>, grown conversion rates and AOV, and helped brands earn more from the traffic they already have.</p>
         </section>
 
         <section className="cv-block"><h3>Core competencies</h3>
@@ -149,10 +183,10 @@ export default function CV() {
 
         <section className="cv-block"><h3>Work experience</h3>
           <div className="cv-role"><h4>eCommerce CRO & Conversion Strategist</h4><p className="cv-meta"><span>Amzoner Consulting, Pakistan</span><span>April 2023 – Present</span></p></div>
-          {experience.map((g) => <div className="cv-group" key={g.heading}><h5>{g.heading}</h5><ul>{g.items.map((i) => <li key={i}>{i}</li>)}</ul></div>)}
+          {experience.map((g) => <div className="cv-group" key={g.heading}><h5>{g.heading}</h5><ul>{g.items.map((i) => <li key={i}><Hl text={i} /></li>)}</ul></div>)}
         </section>
 
-        <section className="cv-block"><h3>Key achievements</h3><ul>{achievements.map((a) => <li key={a}>{a}</li>)}</ul></section>
+        <section className="cv-block"><h3>Key achievements</h3><ul>{achievements.map((a) => <li key={a}><Hl text={a} /></li>)}</ul></section>
 
         <section className="cv-block"><h3>Selected clients</h3>
           <p className="cv-clients">{cases.map((p, i) => <span key={p.slug}><Link prefetch={false} href={`/case-studies/${p.slug}`}>{p.name}</Link>{i < cases.length - 1 ? " · " : ""}</span>)}</p>
@@ -170,6 +204,8 @@ export default function CV() {
         <section className="cv-block"><h3>Languages</h3><p>English (fluent) · Urdu (native)</p></section>
       </article>
     </div></section>
+
+    <section className="section cv-faq soft"><div className="shell faq-layout"><div><span className="eyebrow">Quick answers</span><h2>About<br/><em>Amir Raza.</em></h2><p>Short, factual answers for clients, recruiters and search engines.</p></div><div className="faq-list">{faqs.map((f, i) => <details key={f.q} open={i < 2}><summary><h3>{f.q}</h3><i aria-hidden="true">+</i></summary><p>{f.a}</p></details>)}</div></div></section>
 
     <section className="cta cv-cta"><div className="shell"><div className="cta-panel"><div className="cta-copy"><h2>Like what you read?</h2><p>Send a short brief about your store or role and I’ll reply personally, usually the same day.</p></div><a className="button cta-button" href={whatsapp}>Start a conversation <span>→</span></a></div></div></section>
   </PageShell>;

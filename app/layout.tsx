@@ -48,17 +48,18 @@ const personSchema = {
   address: { "@type": "PostalAddress", addressLocality: "Karachi", addressCountry: "PK" },
   founder: {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Amir Raza",
     jobTitle: "Shopify Expert & Performance Marketer",
     url: siteUrl,
     sameAs: [
-      "https://www.linkedin.com/in/iamamirraza",
+      "https://www.linkedin.com/in/amirraza.me",
       "https://www.instagram.com/amirraza.me/",
       "https://www.facebook.com/amirraza.me/",
     ],
   },
   sameAs: [
-    "https://www.linkedin.com/in/iamamirraza",
+    "https://www.linkedin.com/in/amirraza.me",
     "https://www.instagram.com/amirraza.me/",
     "https://www.facebook.com/amirraza.me/",
   ],

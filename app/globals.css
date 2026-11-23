@@ -1637,7 +1637,7 @@ html[data-theme="dark"] .cv-head{border-bottom-color:var(--line)}
   @page{size:A4;margin:10mm 12mm}
   html,html[data-theme="dark"]{--ink:#19151f;--muted:#5f5a68;--purple:#5b21b6;--purple2:#6d28d9;--surface:#fff;--line:#dcd7e3;--paper:#fff;--soft:#fff;color-scheme:light}
   body{background:#fff!important}
-  .topbar,.footer,.mobile-contact,.cv-hero,.cv-cta{display:none!important}
+  .topbar,.footer,.mobile-contact,.cv-hero,.cv-cta,.cv-faq{display:none!important}
   .cv-section{padding:0;background:#fff}
   .cv-section .shell{width:100%}
   .cv-paper{max-width:none;border:0;box-shadow:none;border-radius:0;padding:0;font-size:9.6pt;line-height:1.36}
@@ -1656,3 +1656,21 @@ html[data-theme="dark"] .cv-head{border-bottom-color:var(--line)}
   .cv-skills{grid-template-columns:1fr}
   .cv-block h3{letter-spacing:0;font-size:11pt}
 }
+
+/* CV: bolder headline, prominent numbers */
+.cv-hero h1 em{font-weight:900;font-size:.56em;letter-spacing:-1.8px}
+.cv-lede{max-width:720px!important;font-size:17px!important;color:var(--ink)!important}
+.cv-lede strong{font-weight:800;color:var(--purple)}
+.cv-lede strong:first-child{color:var(--ink)}
+.cv-highlights>div{border-top:3px solid var(--purple2);padding:22px 22px 20px}
+.cv-highlights b{font-size:42px;font-weight:900;letter-spacing:-1.8px;line-height:1;margin-bottom:6px}
+.cv-highlights span{font-size:14px;font-weight:800}
+.cv-title{font-weight:800;font-size:17px}
+.cv-num{font-weight:800;color:var(--purple)}
+.cv-block p strong{font-weight:800;color:var(--purple)}
+.cv-faq summary h3{margin:0;font-size:inherit;font-weight:800}
+.cv-faq .faq-list details>p{font-size:14px}
+html[data-theme="dark"] .cv-num,html[data-theme="dark"] .cv-block p strong,html[data-theme="dark"] .cv-lede strong:not(:first-child){color:#b79bff}
+@media(max-width:700px){.cv-highlights b{font-size:32px}.cv-lede{font-size:15.5px!important}}
+@media print{.cv-title{font-size:12pt}.cv-num,.cv-block p strong{color:#5b21b6}}
+.cv-edu strong,html[data-theme="dark"] .cv-edu strong{color:var(--ink)!important}
