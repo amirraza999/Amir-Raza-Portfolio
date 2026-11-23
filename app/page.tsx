@@ -3,6 +3,7 @@ import { CTA, ContactSection, HeroGraphic, PageShell, ProjectCard } from "./comp
 import { projects, verifiedPerformance, whatsapp } from "./data";
 import SelectedWorkCarousel from "./selected-work-carousel";
 import ReviewsCarousel from "./reviews-carousel";
+import { PageSchema } from "./seo";
 
 const services=[
   {icon:"shopify",title:"Shopify & e-commerce",text:"Conversion-focused stores with clear journeys, faster shopping and strong product presentation."},
@@ -35,6 +36,7 @@ const faqSchema={"@context":"https://schema.org","@type":"FAQPage",mainEntity:fa
 
 export default function Home(){const featured=projects.filter(p=>p.featured);return <PageShell>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}}/>
+  <PageSchema path="/" name="Amir Raza | Shopify Expert & Meta Ads Specialist in Pakistan" description="Shopify expert and Meta Ads specialist in Karachi helping ecommerce brands grow with conversion-focused stores and profitable ads." crumbs={[]} speakable={[".hero h1",".lead",".faq-list details>p"]}/>
   <section className="hero hero-photo"><HeroGraphic/><div className="shell hero-grid"><div className="hero-copy">
     <div className="desktop-hero-copy"><span className="eyebrow live"><i/>Available for selected projects</span><p className="hello">Hi, I’m Amir Raza.</p><h1>I build stores<br/>&amp; run ads that <em>sell more.</em></h1><p className="lead"><b>Shopify Expert & Performance Marketer</b> helping Pakistani and international brands improve conversion and scale profitable campaigns.</p><div className="actions"><a className="button button-primary" href={whatsapp}>Book a free strategy call →</a><Link prefetch={false} className="text-link" href="/case-studies">See verified results ↗</Link></div><div className="proof-row"><span><b>30</b> stores</span><span><b>{verifiedPerformance.purchases}</b> purchases</span><span><b>{verifiedPerformance.averageRoas}</b> purchase ROAS</span></div></div>
     <div className="mobile-hero-copy"><span className="eyebrow mobile-hero-kicker"><i/>Ecommerce growth partner · Working worldwide</span><p className="mobile-h1" role="heading" aria-level={2}>I build stores<br/>&amp; run ads that <em>sell more.</em></p><p>Shopify stores, performance marketing and conversion systems shaped by real ecommerce experience.</p><a className="mobile-strategy-button" href={whatsapp}>Get your free strategy call <span>→</span></a><Link prefetch={false} className="mobile-work-link" href="/portfolio">Explore our work <span>→</span></Link><p className="mobile-store-proof">30 ecommerce stores built across 10+ industries.</p><div className="mobile-roas-card"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 31V8M6 31h27M11 25l7-7 6 4 9-12"/></svg><div><b>{verifiedPerformance.averageRoas}</b><span>average Purchase ROAS across verified accounts</span></div></div></div>

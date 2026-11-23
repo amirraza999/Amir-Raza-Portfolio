@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CTA, PageShell } from "../components";
 import { verifiedPerformance, whatsapp } from "../data";
+import { PageSchema, pageMeta } from "../seo";
 
-export const metadata: Metadata = {
-  title: { absolute: "Services – Shopify, WooCommerce, Meta, Google & TikTok Ads | Amir Raza" },
-  description: "Shopify and WooCommerce store development, Facebook & Instagram ads, Google Ads, TikTok Ads, landing page CRO, ad creatives and ecommerce strategy by Amir Raza. Pricing is discussed on a free consultation call.",
-  keywords: ["Shopify store development Pakistan", "WooCommerce developer", "Facebook ads manager", "Instagram ads management", "Google Ads management", "TikTok ads management", "conversion rate optimization", "ecommerce consultant Karachi", "ad creatives design"],
-  alternates: { canonical: "/services" },
-  openGraph: { title: "Services | Amir Raza", description: "Store development, paid ads, CRO and ecommerce strategy. Pricing discussed on a free consultation call.", url: "/services", images: [{ url: "/images/services/shopify.webp", width: 800, height: 800, alt: "Shopify Store Design & Development by Amir Raza" }] },
-};
+export const metadata: Metadata = pageMeta({
+  title: "Shopify, WooCommerce, Meta, Google & TikTok Ads Services | Amir Raza",
+  description: "Shopify and WooCommerce stores, Facebook, Instagram, Google and TikTok ads, CRO, ad creatives and ecommerce strategy. Price discussed on a free consultation.",
+  path: "/services",
+  image: { url: "/images/services/shopify.webp", width: 800, height: 800, alt: "Shopify Store Design & Development by Amir Raza" },
+  keywords: ["Shopify store development Pakistan", "WooCommerce developer Pakistan", "Facebook ads manager Pakistan", "Instagram ads management", "Google Ads management Pakistan", "TikTok ads management Pakistan", "conversion rate optimization", "ecommerce consultant Karachi", "ad creatives design", "Amir Raza services"],
+});
 
 type Service = { id: string; title: string; image: string; kicker: string; summary: string; includes: string[]; bestFor: string; proof?: { text: string; href: string; link: string } };
 
@@ -86,6 +87,7 @@ export default function Services() {
   return <PageShell>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <PageSchema path="/services" name="Ecommerce services by Amir Raza" description="Shopify, WooCommerce, Meta, Google and TikTok ads, CRO, creatives and ecommerce strategy. Pricing discussed on a free consultation." crumbs={[["Services", "/services"]]} speakable={[".page-hero h1", ".svc-price-note", ".svc-summary", ".faq-list details>p"]} />
     <section className="page-hero"><div className="shell">
       <span className="eyebrow">Services</span>
       <h1>Everything your store<br /><em>needs to grow.</em></h1>

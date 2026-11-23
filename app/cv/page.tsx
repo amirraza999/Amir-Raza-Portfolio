@@ -11,7 +11,7 @@ const title = "Shopify CRO & Performance Marketing Specialist";
 
 export const metadata: Metadata = {
   title: { absolute: "Amir Raza CV – Shopify CRO & Performance Marketing Specialist, Karachi" },
-  description: `Amir Raza CV: ${title}. 3+ years in Shopify CRO, Meta Ads and ecommerce growth. ${verifiedPerformance.purchases} verified purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS. Download the PDF resume.`,
+  description: `Amir Raza CV: Shopify CRO & Meta Ads specialist, Karachi. 3+ years, ${verifiedPerformance.purchases} verified purchases at ${verifiedPerformance.averageRoas} ROAS. Download PDF.`,
   keywords: ["Amir Raza CV", "Amir Raza resume", "Shopify CRO specialist", "performance marketer Pakistan", "Meta Ads specialist Karachi", "Shopify expert Pakistan", "ecommerce growth specialist", "conversion rate optimization Shopify", "Daraz store manager"],
   alternates: { canonical: "/cv" },
   twitter: { card: "summary_large_image", title: "Amir Raza CV – Shopify CRO & Performance Marketing", description: `${verifiedPerformance.purchases} verified purchases · ${verifiedPerformance.averageRoas} average Purchase ROAS · 30 ecommerce stores.`, images: ["/images/amir-raza.webp"] },
@@ -112,6 +112,7 @@ const personSchema = {
   url: "https://amirraza.me/cv",
   name: "Amir Raza CV / Resume",
   dateModified: "2026-11-23",
+  speakable: { "@type": "SpeakableSpecification", cssSelector: [".cv-hero h1", ".cv-lede", ".faq-list details>p"] },
   breadcrumb: { "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://amirraza.me/" },
     { "@type": "ListItem", position: 2, name: "CV", item: "https://amirraza.me/cv" },
