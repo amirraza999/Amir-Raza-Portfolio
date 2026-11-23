@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/case-studies`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/results`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${siteUrl}/daraz-management`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/cv`, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const caseStudyRoutes: MetadataRoute.Sitemap = projects

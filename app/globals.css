@@ -1583,3 +1583,76 @@ html[data-theme="dark"] .review-stars{color:#ffb000}
 html[data-theme="dark"] .review-client p{color:var(--muted)}
 .mobile-nav-panel a span{color:var(--muted)}
 .text-link{display:inline-block;padding-block:5px}
+
+/* CV page */
+.cv-name{font-weight:800}.cv-block h3{font-weight:800}.cv-role h4,.cv-group h5{font-weight:700}
+.cv-hero h1 em{display:inline-block;font-size:.52em;letter-spacing:-1.6px;line-height:1.15;margin-top:10px}
+.cv-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.cv-actions .button{gap:8px}
+.cv-print{cursor:pointer;font:inherit;font-size:13px;font-weight:800}
+.cv-highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+.cv-highlights>div{display:grid;gap:4px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md)}
+.cv-highlights b{font-size:28px;letter-spacing:-1px;color:var(--purple)}
+.cv-highlights span{font-size:13px;font-weight:700;color:var(--ink)}
+.cv-highlights small{font-size:12px;color:var(--muted)}
+.cv-section{padding:72px 0 90px;background:var(--soft)}
+.cv-paper{font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0;max-width:860px;margin-inline:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 24px 60px #28173d14;padding:52px 56px;color:var(--ink);line-height:1.62;font-size:14.5px}
+.cv-head{display:flex;justify-content:space-between;gap:28px;padding-bottom:24px;border-bottom:2px solid var(--ink)}
+.cv-name{margin:0;font-size:36px;letter-spacing:-1.4px;line-height:1.05}
+.cv-title{margin:8px 0 0;font-weight:700;color:var(--purple)}
+.cv-contact{list-style:none;margin:0;padding:0;text-align:right;font-size:13px;color:var(--muted);display:grid;gap:3px}
+.cv-contact a{color:var(--ink);font-weight:600}
+.cv-contact a:hover,.cv-block a:hover{color:var(--purple)}
+.cv-block{padding-top:26px}
+.cv-block h3{margin:0 0 12px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--purple);display:flex;align-items:center;gap:12px}
+.cv-block h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.cv-block p{margin:0}
+.cv-block ul{list-style:disc;margin:0;padding-left:20px;display:grid;gap:6px}
+.cv-block li::marker{color:var(--purple2)}
+.cv-skills{grid-template-columns:1fr 1fr;column-gap:28px}
+.cv-role h4{margin:0;font-size:17px}
+.cv-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin:2px 0 0}
+.cv-edu{display:grid;gap:6px}
+.cv-edu .cv-meta{color:var(--ink);font-size:14.5px}
+.cv-edu .cv-meta span:last-child{color:var(--muted)}
+.cv-group{margin-top:16px}
+.cv-group h5{margin:0 0 6px;font-size:14px;color:var(--ink)}
+.cv-clients a,.cv-note a{color:var(--purple2);font-weight:600}
+.cv-note{margin-top:8px!important;font-size:13px;color:var(--muted)}
+.cv-block strong{font-weight:700}
+html[data-theme="dark"] .cv-head{border-bottom-color:var(--line)}
+@media(max-width:900px){.cv-highlights{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+  .cv-section{padding:40px 0 60px}
+  .cv-paper{padding:28px 20px;font-size:14px;border-radius:var(--radius-md)}
+  .cv-head{flex-direction:column;gap:16px}
+  .cv-contact{text-align:left}
+  .cv-name{font-size:30px}
+  .cv-skills{grid-template-columns:1fr}
+  .cv-highlights b{font-size:23px}
+  .cv-highlights>div{padding:14px}
+  .cv-actions .button{flex:1 1 100%}
+}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  html,html[data-theme="dark"]{--ink:#19151f;--muted:#5f5a68;--purple:#5b21b6;--purple2:#6d28d9;--surface:#fff;--line:#dcd7e3;--paper:#fff;--soft:#fff;color-scheme:light}
+  body{background:#fff!important}
+  .topbar,.footer,.mobile-contact,.cv-hero,.cv-cta{display:none!important}
+  .cv-section{padding:0;background:#fff}
+  .cv-section .shell{width:100%}
+  .cv-paper{max-width:none;border:0;box-shadow:none;border-radius:0;padding:0;font-size:9.6pt;line-height:1.36}
+  .cv-name{font-size:24pt}
+  .cv-block{padding-top:11px;break-inside:auto}
+  .cv-head{padding-bottom:12px}
+  .cv-group{margin-top:9px}
+  .cv-block h3{margin-bottom:7px;break-after:avoid}
+  .cv-group,.cv-role,.cv-block li{break-inside:avoid}
+  .cv-group h5{break-after:avoid}
+  .cv-block ul{gap:2px}
+  a{text-decoration:none}
+  body{padding:0!important}
+  .cv-head{flex-direction:row}
+  .cv-contact{text-align:right}
+  .cv-skills{grid-template-columns:1fr}
+  .cv-block h3{letter-spacing:0;font-size:11pt}
+}
