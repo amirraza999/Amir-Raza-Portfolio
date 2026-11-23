@@ -6,6 +6,7 @@ const siteUrl = "https://amirraza.me";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/`, changeFrequency: "weekly", priority: 1 },
+    { url: `${siteUrl}/services`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/portfolio`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/case-studies`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/results`, changeFrequency: "weekly", priority: 0.8 },
