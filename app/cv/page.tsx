@@ -6,7 +6,7 @@ import MailtoLink from "../mailto-link";
 import PrintButton from "./print-button";
 
 const email = "amirraza960@outlook.com";
-const linkedin = "https://www.linkedin.com/in/amirraza.me";
+const linkedin = "https://www.linkedin.com/in/iamamirraza";
 const title = "Shopify CRO & Performance Marketing Specialist";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ const faqs = [
   { q: "What results has Amir Raza delivered?", a: `In the last 90 days (${verifiedPerformance.period}) his Meta Ads campaigns produced ${verifiedPerformance.purchases} purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS across seven ad accounts for six brands, with a peak of ${verifiedPerformance.highestRoas}, verified in Meta Ads Manager. He has worked on 30 ecommerce stores across 10+ industries, lifting conversion rates by 15% and AOV by 25%.` },
   { q: "What services does Amir Raza offer?", a: "Shopify store development and CRO audits, A/B testing, Meta, Google and TikTok ads management, GA4 and pixel tracking, upsell and bundle setup, and Daraz store management." },
   { q: "Which tools does Amir Raza use?", a: "GA4, Shopify Analytics, Meta Pixel, Hotjar, Microsoft Clarity, Meta Ads Manager, Google Ads, TikTok Ads, Shopify, WooCommerce, Daraz, WordPress, Canva, Photoshop and Illustrator." },
-  { q: "How can I hire Amir Raza?", a: "Message him on WhatsApp at +92 311 6450243, email amirraza960@outlook.com, or connect on LinkedIn at linkedin.com/in/amirraza.me. He is open to freelance projects and remote roles." },
+  { q: "How can I hire Amir Raza?", a: "Message him on WhatsApp at +92 311 6450243, email amirraza960@outlook.com, or connect on LinkedIn at linkedin.com/in/iamamirraza. He is open to freelance projects and remote roles." },
 ];
 
 const highlights = [
@@ -170,7 +170,7 @@ export default function CV() {
             <li><a href={whatsapp}>+92 311 6450243</a> (WhatsApp)</li>
             <li><MailtoLink email={email}>{email}</MailtoLink></li>
             <li><a href="https://amirraza.me">amirraza.me</a></li>
-            <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/amirraza.me</a></li>
+            <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/iamamirraza</a></li>
           </ul>
         </header>
 

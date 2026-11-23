@@ -96,13 +96,13 @@ const personSchema = {
     knowsAbout: ["Shopify", "Meta Ads", "Google Ads", "TikTok Ads", "Conversion Rate Optimization", "Ecommerce"],
     url: siteUrl,
     sameAs: [
-      "https://www.linkedin.com/in/amirraza.me",
+      "https://www.linkedin.com/in/iamamirraza",
       "https://www.instagram.com/amirraza.me/",
       "https://www.facebook.com/amirraza.me/",
     ],
   },
   sameAs: [
-    "https://www.linkedin.com/in/amirraza.me",
+    "https://www.linkedin.com/in/iamamirraza",
     "https://www.instagram.com/amirraza.me/",
     "https://www.facebook.com/amirraza.me/",
   ],
