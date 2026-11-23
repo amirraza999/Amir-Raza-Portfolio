@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteUrl = "https://amirraza.me";
 export const siteName = "Amir Raza";
 export const lastUpdated = "2026-11-23";
-const defaultImage = { url: "/images/amir-raza.webp", width: 940, height: 940, alt: "Amir Raza, Shopify expert and performance marketer" };
+const defaultImage = { url: "/og/amir-raza-portfolio.jpg", width: 1200, height: 630, alt: "Amir Raza portfolio: Shopify stores and Meta Ads, 9,314 verified sales at 4.78X ROAS" };
 
 type Img = { url: string; width?: number; height?: number; alt: string };
 

@@ -1,4 +1,10 @@
-export const whatsapp = "https://wa.me/923030786960?text=Hi%20Amir%2C%20I%27d%20like%20to%20discuss%20my%20project.";
+export const whatsappNumber = "923030786960";
+export const portfolioUrl = "https://amirraza.me/portfolio";
+/** WhatsApp link with prefilled text. The portfolio URL at the end makes WhatsApp show the portfolio preview image. */
+export function waLink(text: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`${text}\n\nPortfolio: ${portfolioUrl}`)}`;
+}
+export const whatsapp = waLink("Hi Amir, I saw your portfolio and I'd like to discuss my project.");
 
 // Purchase-only rollup from seven Meta Ads Manager ad accounts across six brands (default attribution: 7-day click, 1-day view).
 // Messaging and lead campaigns are intentionally excluded.

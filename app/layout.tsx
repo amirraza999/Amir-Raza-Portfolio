@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     siteName: "Amir Raza",
     title: "Amir Raza | Shopify Expert & Meta Ads Specialist",
     description: "9,314 verified purchases at 4.78X average ROAS. Shopify stores, Meta, Google and TikTok ads, CRO. Book a free consultation.",
-    images: [{ url: "/images/amir-raza.webp", width: 940, height: 940, alt: "Amir Raza — Shopify Expert & Performance Marketer" }],
+    images: [{ url: "/og/amir-raza-portfolio.jpg", width: 1200, height: 630, alt: "Amir Raza portfolio: Shopify stores and Meta Ads, 9,314 verified sales at 4.78X ROAS" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amir Raza | Shopify Expert & Meta Ads Specialist",
     description: "9,314 verified purchases at 4.78X average ROAS. Shopify, Meta, Google and TikTok ads.",
-    images: ["/images/amir-raza.webp"],
+    images: ["/og/amir-raza-portfolio.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
