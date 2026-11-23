@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { CTA, PageShell, ProjectPreview, RoasMeter } from "../../components";
 import { caseDetails, projectThumbnail, projects } from "../../data";
 import { JsonLd, PageSchema, lastUpdated, pageMeta } from "../../seo";
+function fitDescription(t:string,max=150){if(t.length<=max)return t;const cut=t.slice(0,max-1);return cut.slice(0,cut.lastIndexOf(" ")).replace(/[,;:·.s]+$/,"")+"…";}
 export const dynamicParams=false;
 export function generateStaticParams(){return projects.filter(p=>p.caseStudy&&caseDetails[p.slug]).map(p=>({slug:p.slug}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=projects.find(p=>p.slug===slug&&p.caseStudy);const detail=caseDetails[slug];if(!project||!detail)return{title:"Case Study"};const image=projectThumbnail(project);return pageMeta({title:`${project.name} Case Study: ${project.result} | Amir Raza`,description:`${detail.intro} ${project.industry} · ${project.tags.join(", ")}.`.slice(0,158),path:`/case-studies/${slug}`,type:"article",image:{url:image,alt:`${project.name} website design`},keywords:[`${project.name} case study`,project.name,...project.tags]});}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const project=projects.find(p=>p.slug===slug&&p.caseStudy);const detail=caseDetails[slug];if(!project||!detail)return{title:"Case Study"};const image=projectThumbnail(project);return pageMeta({title:`${project.name} Case Study: ${project.result} | Amir Raza`,description:fitDescription(`${detail.intro} ${project.name} case study by Amir Raza.`.length<=150?`${detail.intro} ${project.name} case study by Amir Raza.`:detail.intro),path:`/case-studies/${slug}`,type:"article",image:{url:image,alt:`${project.name} website design`},keywords:[`${project.name} case study`,project.name,...project.tags]});}
 export default async function CaseStudy({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params;
   const project=projects.find(p=>p.slug===slug&&p.caseStudy);

@@ -6,7 +6,7 @@ import { PageSchema, pageMeta } from "../seo";
 
 export const metadata: Metadata = pageMeta({
   title: "Shopify, WooCommerce, Meta, Google & TikTok Ads Services | Amir Raza",
-  description: "Shopify and WooCommerce stores, Facebook, Instagram, Google and TikTok ads, CRO, ad creatives and ecommerce strategy. Price discussed on a free consultation.",
+  description: "Shopify & WooCommerce stores, Meta, Google and TikTok ads, CRO, ad creatives and ecommerce strategy. Price discussed on a free consultation.",
   path: "/services",
   image: { url: "/images/services/shopify.webp", width: 800, height: 800, alt: "Shopify Store Design & Development by Amir Raza" },
   keywords: ["Shopify store development Pakistan", "WooCommerce developer Pakistan", "Facebook ads manager Pakistan", "Instagram ads management", "Google Ads management Pakistan", "TikTok ads management Pakistan", "conversion rate optimization", "ecommerce consultant Karachi", "ad creatives design", "Amir Raza services"],

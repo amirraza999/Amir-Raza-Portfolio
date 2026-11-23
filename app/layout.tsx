@@ -9,7 +9,7 @@ const siteUrl = "https://amirraza.me";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Amir Raza | Shopify Expert & Meta Ads Specialist in Pakistan", template: "%s | Amir Raza" },
-  description: "Shopify expert and Meta Ads specialist in Karachi. 9,314 verified purchases at 4.78X average ROAS, 30 ecommerce stores built. Book a free consultation.",
+  description: "Shopify expert and Meta Ads specialist in Karachi: 9,314 verified purchases at 4.78X average ROAS and 30 stores built. Free consultation.",
   applicationName: "Amir Raza",
   category: "Ecommerce marketing",
   formatDetection: { telephone: false, email: false, address: false },
