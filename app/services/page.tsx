@@ -66,7 +66,7 @@ const faqs = [
   { q: "Is the first consultation really free?", a: "Yes. The first call is free and there is no obligation. We discuss your business, and I share practical recommendations either way." },
   { q: "Do you work with clients outside Pakistan?", a: "Yes. I am based in Karachi and work with ecommerce brands worldwide, including stores selling in the UAE and internationally in USD." },
   { q: "Can I hire you for one service only?", a: "Yes. You can hire me for a single service, such as Meta Ads or a Shopify store, or combine services into one growth plan." },
-  { q: "How do we get started?", a: "Message me on WhatsApp at +92 311 6450243 or use the contact form. We book a free call, then I send a proposal." },
+  { q: "How do we get started?", a: "Message me on WhatsApp at +92 303 0786960 or use the contact form. We book a free call, then I send a proposal." },
 ];
 
 const serviceSchema = {

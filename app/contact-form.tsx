@@ -10,7 +10,7 @@ export default function ContactForm() {
     const service = String(values.get("service") ?? "").trim();
     const details = String(values.get("details") ?? "").trim();
     const message = `Hi Amir! I’m ${name}.\n\nI’m interested in: ${service}\n\nAbout my project: ${details}`;
-    window.location.href = `https://wa.me/923116450243?text=${encodeURIComponent(message)}`;
+    window.location.href = `https://wa.me/923030786960?text=${encodeURIComponent(message)}`;
   }
 
   return <form className="contact-form" onSubmit={handleSubmit}>

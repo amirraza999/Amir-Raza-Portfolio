@@ -1,4 +1,4 @@
-export const whatsapp = "https://wa.me/923116450243?text=Hi%20Amir%2C%20I%27d%20like%20to%20discuss%20my%20project.";
+export const whatsapp = "https://wa.me/923030786960?text=Hi%20Amir%2C%20I%27d%20like%20to%20discuss%20my%20project.";
 
 // Purchase-only rollup from seven Meta Ads Manager ad accounts across six brands (default attribution: 7-day click, 1-day view).
 // Messaging and lead campaigns are intentionally excluded.

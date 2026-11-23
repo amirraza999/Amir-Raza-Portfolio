@@ -28,7 +28,7 @@ const faqs = [
   { q: "What results has Amir Raza delivered?", a: `In the last 90 days (${verifiedPerformance.period}) his Meta Ads campaigns produced ${verifiedPerformance.purchases} purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS across seven ad accounts for six brands, with a peak of ${verifiedPerformance.highestRoas}, verified in Meta Ads Manager. He has worked on 30 ecommerce stores across 10+ industries, lifting conversion rates by 15% and AOV by 25%.` },
   { q: "What services does Amir Raza offer?", a: "Shopify store development and CRO audits, A/B testing, Meta, Google and TikTok ads management, GA4 and pixel tracking, upsell and bundle setup, and Daraz store management." },
   { q: "Which tools does Amir Raza use?", a: "GA4, Shopify Analytics, Meta Pixel, Hotjar, Microsoft Clarity, Meta Ads Manager, Google Ads, TikTok Ads, Shopify, WooCommerce, Daraz, WordPress, Canva, Photoshop and Illustrator." },
-  { q: "How can I hire Amir Raza?", a: "Message him on WhatsApp at +92 311 6450243, email amirraza960@outlook.com, or connect on LinkedIn at linkedin.com/in/iamamirraza. He is open to freelance projects and remote roles." },
+  { q: "How can I hire Amir Raza?", a: "Message him on WhatsApp at +92 303 0786960, email amirraza960@outlook.com, or connect on LinkedIn at linkedin.com/in/iamamirraza. He is open to freelance projects and remote roles." },
 ];
 
 const highlights = [
@@ -123,7 +123,7 @@ const personSchema = {
     name: "Amir Raza",
     jobTitle: title,
     description: `${title} with 3+ years in ecommerce. ${verifiedPerformance.purchases} verified Meta Ads purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS; 30 ecommerce stores across 10+ industries.`,
-    telephone: "+923116450243",
+    telephone: "+923030786960",
     worksFor: { "@type": "Organization", name: "Amzoner Consulting" },
     hasOccupation: { "@type": "Occupation", name: title, occupationLocation: { "@type": "Country", name: "Pakistan" }, skills: "Conversion rate optimization, Shopify development, Meta Ads, Google Ads, TikTok Ads, GA4, A/B testing, Daraz" },
     hasCredential: [
@@ -167,7 +167,7 @@ export default function CV() {
           <div><h2 className="cv-name">Amir Raza</h2><p className="cv-title">{title}</p></div>
           <ul className="cv-contact">
             <li>Karachi, Pakistan · Open to remote work</li>
-            <li><a href={whatsapp}>+92 311 6450243</a> (WhatsApp)</li>
+            <li><a href={whatsapp}>+92 303 0786960</a> (WhatsApp)</li>
             <li><MailtoLink email={email}>{email}</MailtoLink></li>
             <li><a href="https://amirraza.me">amirraza.me</a></li>
             <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/iamamirraza</a></li>
