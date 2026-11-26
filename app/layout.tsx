@@ -34,11 +34,6 @@ export const metadata: Metadata = {
     description: "9,314 verified purchases at 4.78X average ROAS. Shopify, Meta, Google and TikTok ads.",
     images: ["/og/amir-raza-portfolio.jpg"],
   },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/images/amir-raza.webp",
-  },
   other: { "geo.region": "PK-SD", "geo.placename": "Karachi", "geo.position": "24.8607;67.0011", ICBM: "24.8607, 67.0011" },
 };
 
@@ -63,7 +58,7 @@ const personSchema = {
   description: "Shopify development, Meta & Google performance marketing, and Daraz store management for ecommerce brands in Pakistan and worldwide.",
   url: siteUrl,
   image: `${siteUrl}/images/amir-raza.webp`,
-  logo: `${siteUrl}/images/amir-raza.webp`,
+  logo: `${siteUrl}/icon.png`,
   telephone: "+923030786960",
   email: "amirraza960@outlook.com",
   priceRange: "Price on consultation",
