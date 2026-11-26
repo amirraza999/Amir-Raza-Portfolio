@@ -1798,3 +1798,4 @@ html[data-theme="dark"] .rw-card{box-shadow:none}
   .rv-option{padding:22px}
   .rv-option .button,.rv-home-actions .button{width:100%}
 }
+.email-text{white-space:nowrap}

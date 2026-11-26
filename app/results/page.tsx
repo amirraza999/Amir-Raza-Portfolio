@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CTA, PageHero, PageShell } from "../components";
 import { verifiedPerformance } from "../data";
 import { JsonLd, PageSchema, pageMeta } from "../seo";
-export const metadata:Metadata=pageMeta({title:`Verified Meta Ads Results: ${verifiedPerformance.purchases} Purchases at ${verifiedPerformance.averageRoas} ROAS | Amir Raza`,description:`${verifiedPerformance.purchases} purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS across 7 Meta ad accounts for 6 ecommerce brands, ${verifiedPerformance.period}. Verified in Ads Manager.`,path:"/results",keywords:["Meta Ads results Pakistan","Facebook ads ROAS","verified ROAS","ecommerce ads results"]});
+export const metadata:Metadata=pageMeta({title:`Meta Ads Results: ${verifiedPerformance.purchases} Purchases, ${verifiedPerformance.averageRoas} ROAS | Amir Raza`,description:`${verifiedPerformance.purchases} purchases at ${verifiedPerformance.averageRoas} average Purchase ROAS across 7 Meta ad accounts for 6 ecommerce brands, ${verifiedPerformance.period}. Verified in Ads Manager.`,path:"/results",keywords:["Meta Ads results Pakistan","Facebook ads ROAS","verified ROAS","ecommerce ads results"]});
 const accounts=[
  {name:"Infinite Mart PK",spend:"PKR 3.02M",purchases:"3,155",roas:"5.25X",peak:"6.83X",slug:"infinitemart"},
  {name:"RefletePK",spend:"PKR 2.03M",purchases:"2,658",roas:"6.40X",peak:"8.53X",slug:"reflete"},

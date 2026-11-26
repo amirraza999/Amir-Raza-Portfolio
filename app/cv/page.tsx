@@ -10,7 +10,7 @@ const linkedin = "https://www.linkedin.com/in/iamamirraza";
 const title = "Shopify CRO & Performance Marketing Specialist";
 
 export const metadata: Metadata = {
-  title: { absolute: "Amir Raza CV – Shopify CRO & Performance Marketing Specialist, Karachi" },
+  title: { absolute: "Amir Raza CV – Shopify CRO & Meta Ads Specialist, Karachi" },
   description: `Amir Raza CV: Shopify CRO & Meta Ads specialist, Karachi. 3+ years, ${verifiedPerformance.purchases} verified purchases at ${verifiedPerformance.averageRoas} ROAS. Download PDF.`,
   keywords: ["Amir Raza CV", "Amir Raza resume", "Shopify CRO specialist", "performance marketer Pakistan", "Meta Ads specialist Karachi", "Shopify expert Pakistan", "ecommerce growth specialist", "conversion rate optimization Shopify", "Daraz store manager"],
   alternates: { canonical: "/cv" },
@@ -105,6 +105,16 @@ const certifications = [
   ["Graphic Design Mastery (Illustrator, Photoshop)", "Jawan Pakistan"],
 ];
 
+/** Shows an email address as text while keeping "@" in its own element, so the CDN does not swap it for a /cdn-cgi/l/email-protection link (which returns 404 to crawlers). */
+function EmailText({ value }: { value: string }) {
+  const [user, domain] = value.split("@");
+  return <span className="email-text">{user}<span>@</span>{domain}</span>;
+}
+function WithEmail({ text }: { text: string }) {
+  const parts = text.split(email);
+  return <>{parts.map((p, i) => <span key={i}>{p}{i < parts.length - 1 && <EmailText value={email} />}</span>)}</>;
+}
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -168,7 +178,7 @@ export default function CV() {
           <ul className="cv-contact">
             <li>Karachi, Pakistan · Open to remote work</li>
             <li><a href={whatsapp}>+92 303 0786960</a> (WhatsApp)</li>
-            <li><MailtoLink email={email}>{email}</MailtoLink></li>
+            <li><MailtoLink email={email}><EmailText value={email} /></MailtoLink></li>
             <li><a href="https://amirraza.me">amirraza.me</a></li>
             <li><a href={linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/iamamirraza</a></li>
           </ul>
@@ -206,7 +216,7 @@ export default function CV() {
       </article>
     </div></section>
 
-    <section className="section cv-faq soft"><div className="shell faq-layout"><div><span className="eyebrow">Quick answers</span><h2>About<br/><em>Amir Raza.</em></h2><p>Short, factual answers for clients, recruiters and search engines.</p></div><div className="faq-list">{faqs.map((f, i) => <details key={f.q} open={i < 2}><summary><h3>{f.q}</h3><i aria-hidden="true">+</i></summary><p>{f.a}</p></details>)}</div></div></section>
+    <section className="section cv-faq soft"><div className="shell faq-layout"><div><span className="eyebrow">Quick answers</span><h2>About<br/><em>Amir Raza.</em></h2><p>Short, factual answers for clients, recruiters and search engines.</p></div><div className="faq-list">{faqs.map((f, i) => <details key={f.q} open={i < 2}><summary><h3>{f.q}</h3><i aria-hidden="true">+</i></summary><p><WithEmail text={f.a} /></p></details>)}</div></div></section>
 
     <section className="cta cv-cta"><div className="shell"><div className="cta-panel"><div className="cta-copy"><h2>Like what you read?</h2><p>Send a short brief about your store or role and I’ll reply personally, usually the same day.</p></div><a className="button cta-button" href={whatsapp}>Start a conversation <span>→</span></a></div></div></section>
   </PageShell>;
