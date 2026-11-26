@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/portfolio`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/case-studies`, lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/results`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${siteUrl}/reviews`, lastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: `${siteUrl}/cv`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/daraz-management`, lastModified, changeFrequency: "monthly", priority: 0.7 },
   ];

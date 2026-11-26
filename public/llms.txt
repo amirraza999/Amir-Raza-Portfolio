@@ -15,6 +15,7 @@ Verified performance (from Meta Ads Manager account data, 14 Aug–11 Nov 2026):
 ## Key pages
 
 - [Services](https://amirraza.me/services): Eight ecommerce services with inclusions; pricing on a free consultation.
+- [Reviews](https://amirraza.me/reviews): Video, photo and written client reviews. Google profile: https://share.google/30YLIZf7WbFRDufaM
 - [CV](https://amirraza.me/cv): Full resume and downloadable PDF.
 - [Home](https://amirraza.me/): Overview of services, featured work, verified stats, client reviews and FAQs.
 - [Portfolio](https://amirraza.me/portfolio): 28 Shopify and ecommerce storefront projects across beauty, fashion, electronics, general retail, niche, sports and food/agri.

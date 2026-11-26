@@ -71,6 +71,7 @@ const personSchema = {
   knowsLanguage: ["English", "Urdu"],
   knowsAbout: ["Shopify", "WooCommerce", "Meta Ads", "Facebook Ads", "Instagram Ads", "Google Ads", "TikTok Ads", "Conversion Rate Optimization", "Daraz", "Ecommerce strategy"],
   hasOfferCatalog: { "@id": `${siteUrl}/services#catalog` },
+  hasMap: "https://www.google.com/maps/place/?q=place_id:ChIJhaf5HKTFlYcRx8az6AGTklE",
   contactPoint: { "@type": "ContactPoint", contactType: "sales", telephone: "+923030786960", email: "amirraza960@outlook.com", availableLanguage: ["English", "Urdu"], url: "https://wa.me/923030786960" },
   geo: { "@type": "GeoCoordinates", latitude: 24.8607, longitude: 67.0011 },
   areaServed: [
@@ -105,6 +106,7 @@ const personSchema = {
     "https://www.linkedin.com/in/iamamirraza",
     "https://www.instagram.com/amirraza.me/",
     "https://www.facebook.com/amirraza.me/",
+    "https://share.google/30YLIZf7WbFRDufaM",
   ],
   makesOffer: [
     { "@type": "Offer", itemOffered: { "@type": "Service", name: "Shopify & E-commerce Development" } },
