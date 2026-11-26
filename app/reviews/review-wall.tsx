@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Review } from "../reviews-data";
+import { cdn } from "../asset";
 
 type Filter = "all" | "video" | "image" | "text";
 
@@ -12,7 +13,7 @@ function Stars({ rating }: { rating: number }) {
 
 function Video({ media, name }: { media: Extract<NonNullable<Review["media"]>, { type: "video" }>; name: string }) {
   const [playing, setPlaying] = useState(false);
-  const poster = media.poster ?? (media.youtube ? `https://i.ytimg.com/vi/${media.youtube}/hqdefault.jpg` : undefined);
+  const poster = cdn(media.poster) ?? (media.youtube ? `https://i.ytimg.com/vi/${media.youtube}/hqdefault.jpg` : undefined);
   const label = media.title ?? `${name} video review`;
   if (playing) {
     return <div className="rw-video">{media.youtube
@@ -30,7 +31,7 @@ function Card({ review }: { review: Review }) {
   const m = review.media;
   return <article className={`rw-card${m ? ` rw-has-${m.type}` : ""}`}>
     {m?.type === "video" && <Video media={m} name={review.name} />}
-    {m?.type === "image" && <figure className="rw-photo"><img src={m.src} alt={m.alt} loading="lazy" decoding="async" /></figure>}
+    {m?.type === "image" && <figure className="rw-photo"><img src={cdn(m.src)} alt={m.alt} loading="lazy" decoding="async" /></figure>}
     <div className="rw-body">
       <div className="rw-top"><Stars rating={review.rating} />{review.source && <span className="rw-source">{review.source}</span>}</div>
       <blockquote>“{review.quote}”</blockquote>

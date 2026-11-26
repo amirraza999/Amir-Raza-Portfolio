@@ -1,3 +1,4 @@
+import { cdn } from "./asset";
 export const whatsappNumber = "923030786960";
 export const portfolioUrl = "https://amirraza.me/portfolio";
 /** WhatsApp link with prefilled text. The portfolio URL at the end makes WhatsApp show the portfolio preview image. */
@@ -33,7 +34,7 @@ export function projectThumbnail(project:Project){
 }
 
 export function projectScrollImages(project:Project){
-  return {desktop:`/images/scroll/${project.slug}-desktop.webp`, mobile:`/images/scroll/${project.slug}-mobile.webp`};
+  return {desktop:cdn(`/images/scroll/${project.slug}-desktop.webp`), mobile:cdn(`/images/scroll/${project.slug}-mobile.webp`)};
 }
 
 export const projects: Project[] = [

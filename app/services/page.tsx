@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CTA, PageShell } from "../components";
 import { verifiedPerformance, waLink, whatsapp } from "../data";
 import { PageSchema, pageMeta } from "../seo";
+import { cdn } from "../asset";
 
 export const metadata: Metadata = pageMeta({
   title: "Ecommerce Services: Shopify, WooCommerce & Ads | Amir Raza",
@@ -98,7 +99,7 @@ export default function Services() {
 
     <section className="section svc-list"><div className="shell">
       {services.map((s, i) => <article className={`svc-item${i % 2 ? " flip" : ""}`} id={s.id} key={s.id}>
-        <div className="svc-media"><img src={`/images/services/${s.image}.webp`} alt={`${s.title} by Amir Raza`} width={800} height={800} loading={i < 2 ? "eager" : "lazy"} decoding="async" /></div>
+        <div className="svc-media"><img src={cdn(`/images/services/${s.image}.webp`)} alt={`${s.title} by Amir Raza`} width={800} height={800} loading={i < 2 ? "eager" : "lazy"} decoding="async" /></div>
         <div className="svc-copy">
           <span className="eyebrow">{String(i + 1).padStart(2, "0")} · {s.kicker}</span>
           <h2>{s.title}</h2>

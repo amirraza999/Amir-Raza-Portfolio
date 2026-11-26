@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { cdnFallbackScript } from "./asset";
 import "./globals.css";
 
 const satoshi = localFont({src: [{path: "./fonts/Satoshi-400.woff2", weight: "400"}, {path: "./fonts/Satoshi-500.woff2", weight: "500"}, {path: "./fonts/Satoshi-700.woff2", weight: "700"}, {path: "./fonts/Satoshi-900.woff2", weight: "900"}], display: "swap", variable: "--font-satoshi"});
@@ -119,6 +120,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={satoshi.variable} data-theme="light" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <script dangerouslySetInnerHTML={{ __html: cdnFallbackScript }} />
         <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}` }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
