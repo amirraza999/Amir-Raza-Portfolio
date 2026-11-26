@@ -10,7 +10,7 @@ const linkedin = "https://www.linkedin.com/in/iamamirraza";
 const title = "Shopify CRO & Performance Marketing Specialist";
 
 export const metadata: Metadata = {
-  title: { absolute: "Amir Raza CV – Shopify CRO & Meta Ads Specialist, Karachi" },
+  title: { absolute: "Amir Raza CV – Shopify CRO & Meta Ads Specialist" },
   description: `Amir Raza CV: Shopify CRO & Meta Ads specialist, Karachi. 3+ years, ${verifiedPerformance.purchases} verified purchases at ${verifiedPerformance.averageRoas} ROAS. Download PDF.`,
   keywords: ["Amir Raza CV", "Amir Raza resume", "Shopify CRO specialist", "performance marketer Pakistan", "Meta Ads specialist Karachi", "Shopify expert Pakistan", "ecommerce growth specialist", "conversion rate optimization Shopify", "Daraz store manager"],
   alternates: { canonical: "/cv" },
